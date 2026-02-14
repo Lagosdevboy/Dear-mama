@@ -1,72 +1,41 @@
 // Elements
-const envelope = document.getElementById("envelope-container");
-const letter = document.getElementById("letter-container");
-const noBtn = document.querySelector(".no-btn");
-const yesBtn = document.querySelector(".btn[alt='Yes']");
+const envelopeContainer = document.getElementById("envelope-container");
+const letterContainer   = document.getElementById("letter-container");
+const letterWindow      = document.querySelector(".letter-window");
+const noBtn             = document.querySelector(".no-btn");
+const yesBtn            = document.querySelector(".yes-btn");
+const title             = document.getElementById("letter-title");
+const catImg            = document.getElementById("letter-cat");
+const buttons           = document.getElementById("letter-buttons");
+const finalText         = document.getElementById("final-text");
 
-const title = document.getElementById("letter-title");
-const catImg = document.getElementById("letter-cat");
-const buttons = document.getElementById("letter-buttons");
-const finalText = document.getElementById("final-text");
-
-// Click Envelope
-
-envelope.addEventListener("click", () => {
-    envelope.style.display = "none";
-    letter.style.display = "flex";
-
-    setTimeout( () => {
-        document.querySelector(".letter-window").classList.add("open");
-    },50);
+// Open letter
+envelopeContainer.addEventListener("click", () => {
+  envelopeContainer.style.display = "none";
+  letterContainer.style.display = "flex";
+  setTimeout(() => letterWindow.classList.add("open"), 60);
 });
 
-// Logic to move the NO btn
-
+// Make "No" run away (random direction, stays in bounds better)
 noBtn.addEventListener("mouseover", () => {
-    const min = 200;
-    const max = 200;
+  const container = letterWindow.getBoundingClientRect();
+  const btnSize   = noBtn.getBoundingClientRect();
 
-    const distance = Math.random() * (max - min) + min;
-    const angle = Math.random() * Math.PI * 2;
+  let newX = Math.random() * (container.width - btnSize.width - 100) + 50;
+  let newY = Math.random() * (container.height - btnSize.height - 200) + 100;
 
-    const moveX = Math.cos(angle) * distance;
-    const moveY = Math.sin(angle) * distance;
-
-    noBtn.style.transition = "transform 0.3s ease";
-    noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  noBtn.style.transition = "transform 0.4s ease";
+  noBtn.style.transform  = `translate(${newX - container.width/2}px, ${newY - container.height/2}px)`;
 });
 
-// Logic to make YES btn to grow
-
-// let yesScale = 1;
-
-// yesBtn.style.position = "relative"
-// yesBtn.style.transformOrigin = "center center";
-// yesBtn.style.transition = "transform 0.3s ease";
-
-// noBtn.addEventListener("click", () => {
-//     yesScale += 2;
-
-//     if (yesBtn.style.position !== "fixed") {
-//         yesBtn.style.position = "fixed";
-//         yesBtn.style.top = "50%";
-//         yesBtn.style.left = "50%";
-//         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-//     }else{
-//         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-//     }
-// });
-
-// YES is clicked
-
+// Yes clicked → celebration
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
+  title.textContent = "Yippeeee! ♡";
 
-    catImg.src = "cat_dance.gif";
+  // Change to dancing cat (make sure you have cat_dance.gif)
+  catImg.src = "cat_dance.gif";
 
-    document.querySelector(".letter-window").classList.add("final");
-
-    buttons.style.display = "none";
-
-    finalText.style.display = "block";
+  letterWindow.classList.add("final");
+  buttons.style.display = "none";
+  finalText.style.display = "block";
 });
