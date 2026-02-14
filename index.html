@@ -1,61 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Valentine Letter ♡</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Envelope Screen -->
-  <div id="envelope-container">
-    <img src="envelope.png" alt="Click to open your letter" id="envelope" />
-    <p>♡ Letter for You ♡</p>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Valentine Letter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Letter Screen -->
-  <div id="letter-container">
-    <div class="letter-window">
-      <h1 id="letter-title">Will you be my Valentine?</h1>
-
-      <img src="cat_heart.gif" class="cat" id="letter-cat" alt="Cute cat with heart" />
-
-      <div class="buttons" id="letter-buttons">
-        <img src="yes.png" class="btn yes-btn" alt="Yes" />
-
-        <div class="no-wrapper">
-          <img src="no.png" class="btn no-btn" alt="No" />
-        </div>
-      </div>
-
-      <p id="final-text" class="final-text">
-        <strong>Valentine Letter:</strong><br><br>
-        Every time I look at you, I feel like the luckiest man alive—not because you’re perfect, but because you’re perfectly mine, and somehow you chose me too. I love you more than words can ever carry.<br><br>
-
-        You know those quiet moments when the world feels heavy? You make them light again just by being you. Thank you for being my safe place, my laughter, my reason to keep going. I love you beyond measure.<br><br>
-
-        I used to think love was just a feeling… until you showed me it’s a choice I want to make every single day—for your smile, your dreams, your little habits that drive me crazy in the best way. You’re my forever choice.<br><br>
-
-        Sometimes I catch myself smiling for no reason, and then I realize it’s because you’re in my heart. You’ve turned ordinary days into something magical, and I never want to go back to a life without you in it. I love you so deeply.<br><br>
-
-        If I had to live my life all over again, I’d still find my way to you—because no version of me would ever be complete without your love. You’re my home, my peace, my everything.<br><br>
-
-        Your love has healed parts of me I didn’t even know were broken. With you, I feel seen, understood, and truly wanted. Thank you for choosing me every day. I promise to love you fiercely and gently, always.<br><br>
-
-        I don’t just love you for the big moments. I love you for the small ones—the way you hum when you’re happy, how you steal the blanket but still cuddle closer, the sleepy “I love you” you mumble at 2 a.m. Those are the pieces that own my heart completely.<br><br>
-
-        Before you, I thought I knew what happiness was. Now I realize I was just waiting for you to show me the real thing. You’re my favorite hello and my hardest goodbye. I love you more than yesterday, but less than tomorrow.<br><br>
-
-        You make me want to be better—not because I have to, but because you deserve the best version of me. Thank you for believing in me even when I forget to believe in myself. My heart is yours, completely and forever.<br><br>
-
-        In a world full of temporary things, you feel like the one permanent truth I’ve ever known. I love you in ways I never thought possible, and I’ll spend the rest of my life showing you just how deep that love goes.
-      </p>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Envelope Screen -->
+    <div id="envelope-container">
+      <img src="envelope.png" alt="Envelope" id="envelope" />
+      <p>♡ Letter for You ♡</p>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Letter Screen -->
+    <div id="letter-container">
+      <div class="letter-window">
+        <h1 id="letter-title">Will you be my Valentine?</h1>
+
+        <img src="cat_heart.gif" class="cat" id="letter-cat" />
+
+        <div class="buttons" id="letter-buttons">
+          <img src="yes.png" class="btn yes-btn" alt="Yes" />
+
+          <div class="no-wrapper">
+            <img src="no.png" class="btn no-btn" alt="No" />
+          </div>
+        </div>
+
+        <p id="final-text" class="final-text" style="display: none">
+          <strong>Valentine Letter:</strong> Every time I see you, I feel lucky to be yours. You lighten my days, heal my heart, and in every lifetime, I’d still find you. You’re my home, my joy, my forever love.
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
